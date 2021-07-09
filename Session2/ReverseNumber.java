@@ -7,7 +7,7 @@ public class ReverseNumber {
 		
 		int num = 342;
 		
-		while(num >= 0) {
+		while(num > 0) {
 			
 			//extracting digit
 			int digit = num % 10;
