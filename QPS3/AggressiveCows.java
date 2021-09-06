@@ -9,13 +9,14 @@ public class AggressiveCows {
 		int pos = stalls[0];
 		int kitniPlacedHain = 1;
 		for(int stallI = 1; stallI < stalls.length; stallI++) {
-			if(kitniPlacedHain == numCows) {
-				return true;
-			}
+			
 			int curr = stalls[stallI];
 			if(curr - pos >= minDist) {
 				kitniPlacedHain++;
 				pos = curr;
+			}
+			if(kitniPlacedHain == numCows) {
+				return true;
 			}
 		}
 		
@@ -30,7 +31,7 @@ public class AggressiveCows {
 		int numCows = 3;
 		
 		
-		int l = 0, r = stalls[stalls.length - 1] - stalls[0];
+		int l = 0, r = stalls[stalls.length - 1] - stalls[0] + 1;
 		
 		while(r > l + 1) {
 			int mid = (l + r) / 2;
