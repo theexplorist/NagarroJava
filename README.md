@@ -75,6 +75,7 @@ while(i <= n) {
 }
 ```
 //n/5-> O(n)
+
 // Question 8
 ```
 int i = 1;
@@ -105,6 +106,7 @@ while(i <= n) {
 }
 ```
 // O(log<sub>3</sub>n)
+
 // Question 11
 ```
 int i = 1;
