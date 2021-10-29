@@ -211,4 +211,50 @@ public class BinarySearchTree {
 		return isLeftBSt && isRightBst;
 	}
 	
+	int sum = 0;
+
+	public void replaceWithLarger() {
+		// TODO Auto-generated method stub
+
+		replaceWithLarger(this.root);
+	}
+
+	private void replaceWithLarger(Node root) {
+		if (root == null) {
+			return;
+		}
+		// right self left
+
+		replaceWithLarger(root.right);
+
+		int temp = root.val;
+		root.val = sum;
+		sum = sum + temp;
+
+		replaceWithLarger(root.left);
+	}
+	
+	public void printInRange(int low, int high) {
+		// TODO Auto-generated method stub
+
+		this.printInRange(this.root, low, high);
+	}
+
+	private void printInRange(Node root, int low, int high) {
+		// TODO Auto-generated method stub
+
+		if (root == null) {
+			return;
+		}
+		if (root.val < low) {
+			printInRange(root.right, low, high);
+		} else if (root.val > high) {
+			printInRange(root.left, low, high);
+		} else {// inside range
+
+			printInRange(root.left, low, high);
+			System.out.println(root.val);
+			printInRange(root.right, low, high);
+		}
+	}
 }
